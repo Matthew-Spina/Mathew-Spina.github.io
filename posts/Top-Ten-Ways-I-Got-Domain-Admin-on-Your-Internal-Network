@@ -1,1 +1,994 @@
+<html class="" lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+	font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    display: inline;
+}
 
+body.active {
+	overflow: hidden;
+	z-index: -1
+}
+
+.no-js #experience-timeline>div {
+	background: #dcd9d9;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #dcd9d9
+}
+
+.no-js #experience-timeline>div h3 {
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #374054;
+	display: inline-block;
+	margin: 0
+}
+
+.no-js #experience-timeline>div h4 {
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #7e8890;
+	margin: 0 0 15px 0
+}
+
+.no-js #experience-timeline>div p {
+	color: #74808a;
+	font-size: 0.9em;
+	margin: 0
+}
+
+.no-js #experience-timeline:before,
+.no-js #experience-timeline:after {
+	content: none
+}
+
+@keyframes dropHeader {
+	0% {
+		transform: translateY(-100%)
+	}
+	100% {
+		transform: translateY(0)
+	}
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+	animation-name: dropHeader;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-duration: 0.75s
+}
+
+header ul {
+	display: inline-block;
+	background: #fff;
+	text-align: center;
+	padding: 10px;
+	margin: 0;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px
+}
+
+header li {
+	display: inline-block
+}
+
+header a {
+	display: block;
+	color: #3498db;
+	padding: 10px
+}
+
+header a:hover {
+	color: #217dbb;
+	text-decoration: none;
+	background: #eee;
+	border-radius: 4px
+}
+
+header a:focus {
+	color: #3498db;
+	text-decoration: none
+}
+
+header.active {
+	display: block
+}
+
+header.sticky {
+	position: fixed;
+	z-index: 999
+}
+
+#menu.active {
+	display: block
+}
+
+#mobile-menu-open {
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	right: 15px;
+	top: 10px;
+	color: #3498db;
+	font-size: 1.5em;
+	z-index: 20;
+	padding: 0 7px;
+	border-radius: 4px;
+	background: #dcd9d9
+}
+
+#mobile-menu-close {
+	display: none;
+	text-align: center;
+	width: 100%;
+	background: #dcd9d9;
+	font-size: 1.5em;
+	padding-right: 15px;
+	padding-top: 10px;
+	cursor: pointer;
+	color: #3498db
+}
+
+
+#mobile-menu-close span {
+	font-size: 0.5em;
+	text-transform: uppercase
+}
+
+#mobile-menu-close i {
+	vertical-align: middle
+}
+
+footer {
+	padding: 50px 0
+}
+
+.copyright {
+	padding-top: 20px
+}
+
+.copyright p {
+	margin: 0;
+	color: #74808a
+}
+
+.top {
+	text-align: center
+}
+
+.top span {
+	cursor: pointer;
+	display: block;
+	margin: 15px auto 0 auto;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 3px solid #b9bfc4;
+	text-align: center
+}
+
+.top i {
+	color: #74808a
+}
+
+.social {
+	text-align: right
+}
+
+.social ul {
+	margin: 5px 0 0 0;
+	padding: 0
+}
+
+.social li {
+	display: inline-block;
+	font-size: 1.25em;
+	list-style: none
+}
+
+.social a {
+	display: block;
+	color: #74808a;
+	padding: 10px
+}
+
+.social a:hover {
+	color: #3498db
+}
+
+.btn-rounded-white {
+	display: inline-block;
+	color: #dcd9d9;
+	padding: 15px 25px;
+	border: 3px solid #dcd9d9;
+	border-radius: 30px;
+	transition: .5s ease all
+}
+
+.btn-rounded-white:hover {
+	color: #3498db;
+	background: #dcd9d9;
+	text-decoration: none
+}
+
+.shadow {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+}
+
+.shadow-large {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15)
+}
+
+.heading {
+	position: relative;
+	font-size: 2em;
+	font-weight: 300;
+	margin: 0 0 30px 0
+}
+
+.heading:after {
+	position: absolute;
+	content: '';
+	top: 100%;
+	height: 1px;
+	width: 50px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background: #3498db
+}
+
+.background-alt {
+	background: #f2f2f5
+}
+
+#lead {
+	position: relative;
+	height: 100vh;
+	min-height: 500px;
+	max-height: 1080px;
+	background: url(https://res.cloudinary.com/jav0/image/upload/v1580348386/lead-bg_dh3opu.jpg);
+	background-size: cover;
+	padding: 15px;
+	overflow: hidden
+}
+
+#lead-content {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center
+}
+
+#lead-content h1,
+#lead-content h2 {
+	margin: 0
+}
+
+#lead-content h1 {
+	color: #dcd9d9;
+	font-weight: 900;
+	font-size: 5em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	line-height: 0.9em
+}
+
+#lead-content h2 {
+	color: #a0cfee;
+	font-weight: 500;
+	font-size: 2.25em;
+	margin-bottom: 15px
+}
+
+#lead-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(33, 125, 187, 0.8);
+	z-index: 1
+}
+
+#lead-down {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	bottom: 15px;
+	color: #dcd9d9
+}
+
+#lead-down span {
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 3px solid #a0cfee;
+	text-align: center
+}
+
+#lead-down i {
+	animation: pulsate 1.5s ease;
+	animation-iteration-count: infinite;
+	padding-top: 5px
+}
+
+@keyframes pulsate {
+	0% {
+		transform: scale(1, 1)
+	}
+	50% {
+		transform: scale(1.2, 1.2)
+	}
+	100% {
+		transform: scale(1, 1)
+	}
+}
+
+#about {
+    background-color: #f2f2f5;
+	padding: 75px 15px;
+	border-bottom: 1px solid #dcd9d9
+}
+
+#about h2 {
+	color: #374054
+}
+
+#about p {
+	color: #74808a;
+	margin: 0
+}
+
+#experience {
+	padding: 50px 15px;
+	text-align: center;
+	border-bottom: 1px solid #dcd9d9
+}
+
+#experience h2 {
+	color: #374054
+}
+
+#experience-timeline {
+	margin: 30px auto 0 auto;
+	position: relative;
+	max-width: 1000px
+}
+
+#experience-timeline:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	bottom: 0;
+	left: 303px;
+	right: auto;
+	height: 100%;
+	width: 3px;
+	background: #3498db;
+	z-index: 0
+}
+
+#experience-timeline:after {
+	position: absolute;
+	content: '';
+	width: 3px;
+	height: 40px;
+	background: #3498db;
+	background: linear-gradient(to bottom, #3498db, rgba(52, 152, 219, 0));
+	top: 100%;
+	left: 303px
+}
+
+.vtimeline-content {
+	margin-left: 350px;
+	background: #dcd9d9;
+	border: 1px solid #e6e6e6;
+	padding: 15px;
+	border-radius: 3px;
+	text-align: left
+}
+
+.vtimeline-content h3 {
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #374054;
+	display: inline-block;
+	margin: 0
+}
+
+.vtimeline-content h4 {
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #7e8890;
+	margin: 0 0 15px 0
+}
+
+.vtimeline-content p {
+	color: #74808a;
+	font-size: 0.9em;
+	margin: 0
+}
+
+.vtimeline-point {
+	position: relative;
+	display: block;
+	vertical-align: top;
+	margin-bottom: 30px
+}
+
+.vtimeline-icon {
+	position: relative;
+	color: #dcd9d9;
+	width: 50px;
+	height: 50px;
+	background: #3498db;
+	border-radius: 50%;
+	float: left;
+	z-index: 99;
+	margin-left: 280px
+}
+
+.vtimeline-icon i {
+	display: block;
+	font-size: 2em;
+	margin-top: 10px
+}
+
+.vtimeline-date {
+	width: 260px;
+	text-align: right;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	font-weight: 300;
+	color: #374054
+}
+
+#education {
+	padding: 50px 15px 20px 15px;
+	border-bottom: 1px solid #dcd9d9;
+	text-align: center
+}
+
+#education h2 {
+	color: #374054;
+	margin-bottom: 50px
+}
+
+.education-block {
+	max-width: 700px;
+	margin: 0 auto 30px auto;
+	padding: 30px;
+	border: 1px solid #dcd9d9;
+	text-align: left
+}
+
+.education-block h3 {
+	font-weight: 500;
+	float: left;
+	margin: 0;
+	color: #374054
+}
+
+.education-block span {
+	color: #74808a;
+	float: right
+}
+
+.education-block h4 {
+	color: #74808a;
+	clear: both;
+	font-weight: 500;
+	margin: 0 0 15px 0
+}
+
+.education-block p,
+.education-block ul {
+	margin: 0;
+	color: #74808a;
+	font-size: 0.9em
+}
+
+.education-block ul {
+	padding: 0 0 0 15px
+}
+
+#projects {
+	padding: 50px 15px;
+	border-bottom: 1px solid #dcd9d9;
+	text-align: center
+}
+
+#projects h2 {
+	color: #374054;
+	margin-bottom: 50px
+}
+
+.project {
+	position: relative;
+	max-width: 900px;
+	margin: 0 auto 30px auto;
+	overflow: hidden;
+	background: #dcd9d9;
+	border-radius: 4px
+}
+
+.project-image {
+	float: left
+}
+
+.project-info {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 300px;
+	padding: 15px
+}
+
+.project-info h3 {
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #374054;
+	margin: 0 0 15px 0
+}
+
+.project-info p {
+	color: #74808a;
+	margin: 0 0 15px 0;
+	font-size: 0.9em
+}
+
+.no-image .project-info {
+	position: relative;
+	margin: 0;
+	padding: 30px 15px;
+	transform: none
+}
+
+#more-projects {
+	display: none
+}
+
+#skills {
+	padding: 50px 15px;
+	text-align: center;
+	background: #f2f2f5;
+}
+
+#skills h2 {
+	color: #374054;
+	margin-bottom: 50px
+}
+
+#skills ul {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 800px;
+	border-bottom: 1px solid #dcd9d9;
+}
+
+#skills li {
+	display: inline-block;
+	margin: 7px;
+	padding: 5px 10px;
+	color: #374054;
+	background: #e4e4ea;
+	list-style: none;
+	cursor: default;
+	font-size: 1.2em;
+	border-bottom: 1px solid #dcd9d9;
+}
+
+#contact {
+	padding: 50px 15px;
+	background: #3498db;
+	text-align: center
+}
+
+#contact h2 {
+	margin: 0 0 15px 0;
+	color: #dcd9d9;
+	font-weight: 500
+}
+
+#contact-form {
+	max-width: 500px;
+	margin: 0 auto
+}
+
+#contact-form input,
+#contact-form textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	border: none;
+	margin-bottom: 10px;
+	background: #1d6fa5;
+	color: #dcd9d9;
+	transition: .5s ease all
+}
+
+#contact-form input::-webkit-input-placeholder,
+#contact-form textarea::-webkit-input-placeholder {
+	color: #dcd9d9
+}
+
+#contact-form input:-moz-placeholder,
+#contact-form textarea:-moz-placeholder {
+	color: #dcd9d9;
+	opacity: 1
+}
+
+#contact-form input::-moz-placeholder,
+#contact-form textarea::-moz-placeholder {
+	color: #dcd9d9;
+	opacity: 1
+}
+
+#contact-form input:-ms-input-placeholder,
+#contact-form textarea:-ms-input-placeholder {
+	color: #dcd9d9
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+	outline: none;
+	background: #16527a
+}
+
+#contact-form textarea {
+	height: 150px;
+	resize: none
+}
+
+#contact-form button {
+	display: block;
+	width: 100%;
+	background: #dcd9d9;
+	border-radius: 4px;
+	padding: 5px 10px;
+	border: none;
+	color: #3498db;
+	font-weight: 700;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: .5s ease all
+}
+
+#contact-form button:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+}
+
+.optional-section {
+	padding: 50px 15px;
+	text-align: center;
+	border-top: 1px solid #dcd9d9;
+	border-bottom: 1px solid #dcd9d9;
+}
+
+.optional-section h2 {
+	color: #374054
+}
+
+.optional-section-block {
+	max-width: 700px;
+	margin: 0 auto 30px auto;
+	padding: 15px;
+	border: 1px solid #dcd9d9;
+	background: #dcd9d9;
+	text-align: left;
+	
+}
+
+.optional-section-block h3 {
+	font-weight: 500;
+	margin: 0 0 15px 0;
+	color: #374054
+}
+
+.optional-section-block h4 {
+	color: #74808a;
+	clear: both;
+	font-weight: 500;
+	margin: 0 0 15px 0
+}
+
+.optional-section-block p,
+.optional-section-block ul {
+	margin: 0 0 15px 0;
+	color: #74808a;
+	font-size: 0.9em;
+	border-bottom: 1px solid #dcd9d9;
+}
+
+.optional-section-block ul {
+	padding: 0 0 0 15px
+
+}
+
+@media only screen and (max-width: 750px) {
+	#experience-timeline:before,
+	#experience-timeline:after {
+		left: 23px
+	}
+	.vtimeline-date {
+		width: auto;
+		text-align: left;
+		position: relative;
+		margin-bottom: 15px;
+		display: block;
+		margin-left: 70px
+	}
+	.vtimeline-icon {
+		margin-left: 0
+	}
+	.vtimeline-content {
+		margin-left: 70px
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	#lead {
+		height: auto;
+		min-height: auto;
+		max-height: auto;
+		padding: 100px 15px
+	}
+	#lead-content {
+		position: relative;
+		transform: none;
+		left: auto;
+		top: auto
+	}
+	#lead-content h1 {
+		font-size: 3em
+	}
+	#lead-content h2 {
+		font-size: 1.75em
+	}
+	#about {
+		text-align: center
+	}
+	#about p {
+		text-align: left
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	header {
+		position: fixed;
+		display: none;
+		z-index: 999;
+		animation: none;
+		bottom: 0;
+		height: 100%
+	}
+	#mobile-menu-open,
+	#mobile-menu-close {
+		display: block
+	}
+	#menu {
+		height: 100%;
+		overflow-y: auto;
+		box-shadow: none;
+		border-radius: 0;
+		width: 100%
+	}
+	#menu li {
+		display: block;
+		margin-bottom: 10px
+	}
+	#lead-content h1 {
+		font-size: 2em
+	}
+	#lead-content h2 {
+		font-size: 1.3em
+	}
+	#lead-content a {
+		padding: 10px 20px
+	}
+	#lead-down {
+		display: none
+	}
+	.education-block h3,
+	.education-block span {
+		float: none
+	}
+	.project-image {
+		display: none
+	}
+	.project-info {
+		position: relative;
+		margin: 0;
+		padding: 30px 15px;
+		top: auto;
+		transform: none
+	}
+	footer {
+		text-align: center
+	}
+	.social {
+		text-align: center
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#lead-content h1 {
+		font-size: 1.5em
+	}
+	#lead-content h2 {
+		font-size: 1em
+	}
+	#lead-content a {
+		font-size: 0.9em;
+		padding: 5px 10px
+	}
+}
+
+</style>
+<script src="https://cdn.themesinfo.com/detector.js"></script></head>
+
+<body data-gr-c-s-loaded="true">
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Blog</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li><li>
+                <a href="#services">Services</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    
+        <!-- End #lead-content -->
+
+       
+
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading" style="text-align: center;font-family: medium-content-title-font, Georgia, Cambria,Times New Roman,Times,serif;">Top Ten Ways I Got Domain Admin on Your Internal Network </h2>
+                </div>
+                <div class="col-md-8" style="padding-left: 25%; padding-right: 25%; font-size: 21px; font-family: Arial, Helvetica, sans-serif;color: #676767;">
+                    <p>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat laoreet lacinia. Quisque sed nunc id velit ultricies malesuada. Maecenas ornare dolor at orci vulputate viverra vel eu erat. Morbi vel efficitur est. Vivamus dapibus justo a felis ullamcorper, in interdum lorem dignissim. Cras eget enim malesuada, rutrum sem id, eleifend tellus. Ut ultricies condimentum ex eu finibus. Duis facilisis congue volutpat. Fusce lacus arcu, iaculis et venenatis sit amet, congue sit amet erat. Aenean in ipsum et orci cursus efficitur in id tellus. Donec quis quam gravida massa gravida pretium. Etiam orci urna, ultrices eu sollicitudin sit amet, tincidunt nec nunc.
+
+                        Quisque fringilla pellentesque
+                        
+                        
+                        
+                        
+                            mollis. Mauris ullamcorper mauris metus, in mattis elit aliquam quis. Phasellus nec fringilla leo, et ultrices quam. Mauris vulputate tempor enim vel vehicula. Sed at aliquet felis. Fusce felis quam, gravida fermentum sollicitudin ac, condimentum ut sem. Nam ante quam, pharetra eget iaculis a, auctor in neque. In tincidunt a nisi quis placerat. Sed varius ornare euismod. Cras volutpat diam in velit porttitor molestie. Fusce porta, urna vulputate pellentesque hendrerit, sem lorem suscipit felis, a pretium massa metus eleifend nunc.
+                        
+                        Morbi pulvinar velit in tempus laoreet. Vestibulum non laoreet nunc. Sed ac orci et sapien iaculis accumsan ut a elit. Nam tincidunt mi quis risus convallis dignissim. Curabitur molestie mauris et rhoncus iaculis. Aliquam ipsum nisl, malesuada a egestas id, fringilla nec massa. Integer sagittis tincidunt sapien pulvinar tincidunt. Praesent vel eleifend enim. Nulla facilisi. Nulla aliquam rutrum massa. Curabitur dapibus orci ex, ac dapibus est faucibus quis.
+                        
+                        Integer id vestibulum nunc. Cras tristique, tellus eget sollicitudin sollicitudin, felis nunc sollicitudin erat, non ornare quam dui ac tortor. Aliquam elementum nunc mauris, non laoreet leo rutrum et. Integer mattis magna at aliquam facilisis. Nullam convallis ultricies erat sit amet volutpat. Praesent vel laoreet lorem, nec sagittis justo. Aliquam augue tortor, congue sed ornare vel, bibendum ut augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec auctor libero ac dolor consequat, et iaculis urna porttitor. Sed ornare, massa ut pellentesque pretium, enim lorem pellentesque magna, eget laoreet eros dolor at augue.
+                        
+                        Maecenas maximus nunc et dui sagittis, sed porttitor mauris elementum. Praesent et interdum nulla, non faucibus ante. Pellentesque sit amet arcu quis tellus porttitor fringilla sit amet eget tortor. Curabitur tincidunt velit nisl, non porttitor felis fringilla vitae. Aenean fermentum malesuada magna et consequat. Phasellus lobortis mollis malesuada. Aenean id arcu leo.  
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form action="https://mailthis.to/MatthewSpina" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Your name">
+                <input type="email" name="_replyto" placeholder="Your Email">
+                <textarea name="message" placeholder="Enter your message here"></textarea>
+                <input type="hidden" name="_subject" value="Contact form submitted">
+                <input type="hidden" name="_after" value="/ThankYou.html">
+                <input type="hidden" name="_honeypot" value="">
+                <input type="hidden" name="_confirmation" value="">
+                <input type="submit" value="Send">
+            </form>
+
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright"style="text-align:center;">
+                    <p>
+                        Copyright © 2020 Matthew Spina
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+
+
+
+</body></html>
