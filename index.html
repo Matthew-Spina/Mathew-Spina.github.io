@@ -172,18 +172,22 @@
 
 							<p>Let’s talk about how I can solve your cybersecurity needs. Shoot us a e-mail or fill out the contact form below to get started. </p>
 
-							<form method="post" action="#">
+							<div id="contact-form">
+								<form action="https://mailthis.to/MatthewSpina"
+								method="POST" encType="multipart/form-data">
 								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
+								<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Your name"></div>
+								<div class="col-6 col-12-mobile"><input type="email" name="_replyto" placeholder="Your Email"></div>
+								<div class="col-12"><textarea name="message" placeholder="Enter your message here"></textarea></div>
+								<input type="hidden" name="_subject" value="Contact form submitted">
+								<input type="hidden" name="_after" value="/ThankYou.html">
+								<input type="hidden" name="_honeypot" value="">
+								<input type="hidden" name="_confirmation" value="">
+								<div class="col-12"><input type="submit" value="Send"></div>
+							</div>
 							</form>
+					
+							</div>
 
 						</div>
 					</section>
